@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c835f992-41dd-445e-844b-f3a8119dddd8" name="Default Changelist" comment="College Management System">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/college management system.py" beforeDir="false" afterPath="$PROJECT_DIR$/college management system.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +36,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LabExercise" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620725085649</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="College management system">
+      <created>1620799561159</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620799561159</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +162,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second Change" />
     <MESSAGE value="College Management System" />
-    <option name="LAST_COMMIT_MESSAGE" value="College Management System" />
+    <MESSAGE value="College management system" />
+    <option name="LAST_COMMIT_MESSAGE" value="College management system" />
   </component>
 </project>
