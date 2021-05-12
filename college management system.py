@@ -29,19 +29,40 @@ def information():
     e3 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=310, width=250, height=30)
 
     address = Label(top, text="Address",font=('arial',15,'bold'), bg="sky blue")
-    address.place(x=10, y=390)
-    e4 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=390, width=250, height=30)
+    address.place(x=10, y=360)
+    e4 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=360, width=250, height=30)
 
     mobiile_number = Label(top, text="Mobile Number",font=('arial',15,'bold'), bg="sky blue")
-    mobiile_number.place(x=0, y=450)
-    e5 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=450, width=250, height=30)
+    mobiile_number.place(x=0, y=400)
+    e5 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=400, width=250, height=30)
 
     dob = Label(top, text="Date of Birth",font=('arial',15,'bold'), bg="sky blue")
-    dob.place(x=0, y=530)
-    e6 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=530, width=250, height=30)
+    dob.place(x=0, y=450)
+    e6 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=450, width=250, height=30)
 
     gender = Label(top, text="Gender",font=('arial',15,'bold'), bg="sky blue")
-    gender.place(x=0, y=610)
+    gender.place(x=0, y=500)
+
+    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    savebutton.place(x=200, y=630)
+
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    displaybutton.place(x=400, y=630)
+
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    resetbutton.place(x=600, y=630)
+
+    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    updatebutton.place(x=800, y=630)
+
+    deletebutton = Button(top, txt="DELETE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    deletebutton.place(x=1000, y=630)
+
+    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    searchbutton.place(x=1200, y=630)
+
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    exitbutton.place(x=1400, y=630)
 
 
 def marksheet():
@@ -99,6 +120,29 @@ def feereport():
     semester.place(x=0, y=530)
     e6 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=530, width=250, height=30)
 
+    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    savebutton.place(x=200, y=630)
+
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    displaybutton.place(x=400, y=630)
+
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    resetbutton.place(x=600, y=630)
+
+    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    updatebutton.place(x=800, y=630)
+
+    deletebutton = Button(top, txt="DELETE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    deletebutton.place(x=1000, y=630)
+
+    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    searchbutton.place(x=1200, y=630)
+
+    receiptbutton = Button(top, text="RECEIPT NO", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    receiptbutton.place(x=1400, y=630)
+
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
+    exitbutton.place(x=1600, y=630)
 
 
 def menu():

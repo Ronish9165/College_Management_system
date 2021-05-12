@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c835f992-41dd-445e-844b-f3a8119dddd8" name="Default Changelist" comment="">
+    <list default="true" id="c835f992-41dd-445e-844b-f3a8119dddd8" name="Default Changelist" comment="College Management System">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/college management system.py" beforeDir="false" afterPath="$PROJECT_DIR$/college management system.py" afterDir="false" />
     </list>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620717544313</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="College Management System">
+      <created>1620725085649</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620725085649</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +155,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Second Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second Change" />
+    <MESSAGE value="College Management System" />
+    <option name="LAST_COMMIT_MESSAGE" value="College Management System" />
   </component>
 </project>
