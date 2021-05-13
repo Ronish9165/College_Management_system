@@ -1,9 +1,11 @@
 from tkinter import *
 
-root =Tk()
+top =Tk()
 
+f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1290, height=190, bg='white', bd=13)
+f_Frame.place(x=0, y=50)
 
-Frame = LabelFrame(top, text="Student Information", padx=50, pady=50)
-Frame.pack(padx=50, pady=50)
+Label = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+Label.place(x=150, y=0)
 
 mainloop()

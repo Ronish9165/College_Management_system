@@ -13,76 +13,118 @@ def information():
     top.geometry('1350x750')
     top.config(bg='sky blue')
 
-    label = Label(top, text="Student Information", font=('arial', 20, "bold"), bg="sky blue", padx=10, pady=10)
-    label.place(x=0, y=50, )
+    f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1330, height=500, bg='skyblue', bd=13)
+    f_Frame.place(x=15, y=20)
+
+    Labelb = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labelb.place(x=80, y=0)
+
+    f_Framec = LabelFrame(top, font=('arial', 50, 'bold'), width=1220, height=115, bg='skyblue', bd=13)
+    f_Framec.place(x=50, y=570)
+
+    Labelc = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labelc.place(x=50, y=570)
+
+    f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=700, height=380, bg='white', )
+    f_Framed.place(x=600, y=97)
+
+    Labeld = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labeld.place(x=600, y=97)
+
+    label = Label(top, text="STUDENT INFORMATION", font=('arial', 17, "bold"), bg="sky blue", padx=10, pady=10)
+    label.place(x=30, y=50, )
+
+    label = Label(top, text="STUDENT DATABASE", font=('arial', 17, "bold"), bg="sky blue", padx=10, pady=10)
+    label.place(x=600, y=50, )
 
     name = Label(top, text="Name",font=('arial',15,'bold'), bg="sky blue")
-    name.place(x=20, y=190)
-    e1 = Entry(top, font=('arial',15,'bold'),).place(x=150, y=180, width=250, height=30)
+    name.place(x=50, y=120)
+    e1 = Entry(top, font=('arial',15,'bold'))
+    e1.place(x=200, y=120, width=250, height=30)
 
     father_name = Label(top, text="Father Name",font=('arial',15,'bold'), bg="sky blue")
-    father_name.place(x=5, y=260)
-    e2 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=250, width=250, height=30)
+    father_name.place(x=50, y=160)
+    e2 = Entry(top,font=('arial',15,'bold'))
+    e2.place(x=200, y=160, width=250, height=30)
 
     mother_name = Label(top, text="Mother Name",font=('arial',15,'bold'), bg="sky blue")
-    mother_name.place(x=2, y=310)
-    e3 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=310, width=250, height=30)
+    mother_name.place(x=50, y=200)
+    e3 = Entry(top,font=('arial',15,'bold'))
+    e3.place(x=200, y=200, width=250, height=30)
 
     address = Label(top, text="Address",font=('arial',15,'bold'), bg="sky blue")
-    address.place(x=10, y=360)
-    e4 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=360, width=250, height=30)
+    address.place(x=50, y=240)
+    e4 = Entry(top,font=('arial',15,'bold'))
+    e4.place(x=200, y=240, width=250, height=30)
 
-    mobiile_number = Label(top, text="Mobile Number",font=('arial',15,'bold'), bg="sky blue")
-    mobiile_number.place(x=0, y=400)
-    e5 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=400, width=250, height=30)
+    mobile_number = Label(top, text="Mobile Number",font=('arial',15,'bold'), bg="sky blue")
+    mobile_number.place(x=50, y=280)
+    e5 = Entry(top,font=('arial',15,'bold'))
+    e5.place(x=200, y=280, width=250, height=30)
 
-    dob = Label(top, text="Date of Birth",font=('arial',15,'bold'), bg="sky blue")
-    dob.place(x=0, y=450)
-    e6 = Entry(top,font=('arial',15,'bold'),).place(x=150, y=450, width=250, height=30)
+    dob = Label(top, text="Date of Birth", font=('arial', 15, 'bold'), bg="sky blue")
+    dob.place(x=50, y=320)
+    e6 = Entry(top, font=('arial', 15, 'bold'))
+    e6.place(x=200, y=320, width=250, height=30)
 
     gender = Label(top, text="Gender",font=('arial',15,'bold'), bg="sky blue")
-    gender.place(x=0, y=500)
+    gender.place(x=50, y=360)
+    e7 = Entry(top, font=('arial', 15, 'bold'))
+    e7.place(x=200, y=360, width=250, height=30)
 
-    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    savebutton.place(x=200, y=630)
 
-    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    displaybutton.place(x=400, y=630)
+    # Creating a buttons
+    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    savebutton.place(x=80, y=590)
 
-    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    resetbutton.place(x=600, y=630)
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    displaybutton.place(x=250, y=590)
 
-    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    updatebutton.place(x=800, y=630)
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    resetbutton.place(x=420, y=590)
 
-    deletebutton = Button(top, txt="DELETE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    deletebutton.place(x=1000, y=630)
+    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    updatebutton.place(x=580, y=590)
 
-    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    searchbutton.place(x=1200, y=630)
+    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    deletebutton.place(x=750, y=590)
 
-    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    exitbutton.place(x=1400, y=630)
+    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    searchbutton.place(x=920, y=590)
+
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    exitbutton.place(x=1090, y=590)
 
 
 def marksheet():
     top = Toplevel()
-    top.title('Marksheet')
+    top.title('Search Page')
     top.geometry('1350x750')
     top.config(bg='sky blue')
 
-    ern = Label(top, text="Enter Roll Number", font=('arial', 20, 'bold'), bg="sky blue")
-    ern.place(x=200, y=250)
-    e1 = Entry(top, font=('arial', 15, 'bold')).place(x=500, y=250, width=250, height=40)
+    def create_new_win():
+        new = Toplevel()
+        new.title('Marksheet')
+        new.geometry('1350x750')
+        new.config(bg='sky blue')
+
+    f_Framea = LabelFrame(top, font=('arial', 50, 'bold'), width=1000, height=200, bg='skyblue', bd=13)
+    f_Framea.place(x=150, y=200)
+
+    Labela = Label(f_Framea, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labela.place(x=150, y=200)
+
+    ern = Label(top, text="Enter Roll Number", font=('arial', 23, 'bold'), bg="sky blue")
+    ern.place(x=300, y=250)
+    e1 = Entry(top, font=('arial', 15, 'bold')).place(x=700, y=250, width=250, height=45)
 
     sbutton= Button(top, text="SEARCH",font=('arial',15,'bold'), width=15, height=1,bg="lightgrey")
-    sbutton.place(x=200, y=330)
+    sbutton.place(x=300, y=330)
 
-    createbutton = Button(top, text="CREATE NEW ", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    createbutton.place(x=500, y=330)
+    createbutton = Button(top, text="CREATE NEW ", font=('arial', 15, 'bold'),command=create_new_win, width=15, height=1, bg="lightgrey")
+    createbutton.place(x=700, y=330)
 
-    frame = LabelFrame(top, x=500, y=500, bg="black")
-    frame.place(x=100, y=100)
+
 
 def feereport():
     top = Toplevel()
@@ -90,59 +132,90 @@ def feereport():
     top.geometry('1350x750')
     top.config(bg='sky blue')
 
-    label = Label(top, text="Informations", font=('arial', 20, "bold"), bg="sky blue", padx=10, pady=10)
-    label.place(x=0, y=100)
+    t_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1000, height=90, bg='light grey', bd=13)
+    t_Frame.place(x=150, y=0)
 
-    myLabel = Label(top, text= "Fee Report ", font=('arial',50, "bold"),bg="sky blue")
-    myLabel.pack()
+    t_Label = Label(t_Frame, text='FEE REPORT', font=('arial', 36, 'bold'), bg='light grey')
+    t_Label.place(x=280, y=0)
 
-    receipt = Label(top, text="Receipt No", font=('arial', 15, 'bold'), bg="sky blue")
-    receipt.place(x=20, y=190)
-    e1 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=180, width=250, height=30)
+    f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1300, height=350, bg='skyblue', bd=13)
+    f_Frame.place(x=0, y=100)
 
-    student_name = Label(top, text="Student Name", font=('arial', 15, 'bold'), bg="sky blue")
-    student_name.place(x=5, y=260)
-    e2 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=250, width=250, height=30)
+    Labela = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labela.place(x=150, y=0)
 
-    admission = Label(top, text="Admission No", font=('arial', 15, 'bold'), bg="sky blue")
-    admission.place(x=2, y=310)
-    e3 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=310, width=250, height=30)
+    f_Frameb = LabelFrame(top, font=('arial', 50, 'bold'), width=1290, height=90, bg='skyblue', bd=13)
+    f_Frameb.place(x=20, y=630)
 
-    date = Label(top, text="Date", font=('arial', 15, 'bold'), bg="sky blue")
-    date.place(x=10, y=390)
-    e4 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=390, width=250, height=30)
+    Labelb = Label(f_Frame, font=('arial', 30, 'bold'), bg='light grey')
+    Labelb.place(x=20, y=630)
 
-    branch = Label(top, text="Branch", font=('arial', 15, 'bold'), bg="sky blue")
-    branch.place(x=0, y=450)
-    e5 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=450, width=250, height=30)
+    f_Framec = LabelFrame(top, font=('arial', 50, 'bold'), width=1300, height=170, bg='white', bd=13)
+    f_Framec.place(x=25, y=455)
 
-    semester= Label(top, text="Semester", font=('arial', 15, 'bold'), bg="sky blue")
-    semester.place(x=0, y=530)
-    e6 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=530, width=250, height=30)
+    Labelc = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labelc.place(x=25, y=455)
 
-    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    savebutton.place(x=200, y=630)
+    f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=480, height=255, bg='white', )
+    f_Framed.place(x=790, y=165)
 
-    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    displaybutton.place(x=400, y=630)
+    Labeld = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labeld.place(x=790, y=165)
 
-    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    resetbutton.place(x=600, y=630)
+    label = Label(top, text="Informations", font=('arial', 15, "bold"), bg="sky blue", padx=10, pady=10)
+    label.place(x=20, y=120)
 
-    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    updatebutton.place(x=800, y=630)
+    label = Label(top, text="Fee Receipt", font=('arial', 15, "bold"), bg="sky blue", padx=10, pady=10)
+    label.place(x=790, y=120)
 
-    deletebutton = Button(top, txt="DELETE", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    deletebutton.place(x=1000, y=630)
+    receipt = Label(top, text="Receipt No", font=('arial', 14, 'bold'), bg="sky blue")
+    receipt.place(x=30, y=170)
+    e1 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=170, width=250, height=30)
 
-    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    searchbutton.place(x=1200, y=630)
+    student_name = Label(top, text="Student Name", font=('arial', 14, 'bold'), bg="sky blue")
+    student_name.place(x=20, y=210)
+    e2 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=210, width=250, height=30)
 
-    receiptbutton = Button(top, text="RECEIPT NO", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    receiptbutton.place(x=1400, y=630)
+    admission = Label(top, text="Admission No", font=('arial', 14, 'bold'), bg="sky blue")
+    admission.place(x=20, y=250)
+    e3 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=250, width=250, height=30)
 
-    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=15, height=1, bg="lightgrey")
-    exitbutton.place(x=1600, y=630)
+    date = Label(top, text="Date", font=('arial', 14, 'bold'), bg="sky blue")
+    date.place(x=20, y=290)
+    e4 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=290, width=250, height=30)
+
+    branch = Label(top, text="Branch", font=('arial', 14, 'bold'), bg="sky blue")
+    branch.place(x=20, y=330)
+    e5 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=330, width=250, height=30)
+
+    semester= Label(top, text="Semester", font=('arial', 14, 'bold'), bg="sky blue")
+    semester.place(x=20, y=370)
+    e6 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=370, width=250, height=30)
+
+    # Creating a buttons
+    savebutton = Button(top, text="SAVE", font=('arial', 14, 'bold'), width=11, height=1, bg="lightgrey")
+    savebutton.place(x=50, y=655)
+
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    displaybutton.place(x=210, y=655)
+
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    resetbutton.place(x=360, y=655)
+
+    updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    updatebutton.place(x=520, y=655)
+
+    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    deletebutton.place(x=680, y=655)
+
+    searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    searchbutton.place(x=840, y=655)
+
+    receiptbutton = Button(top, text="RECEIPT NO", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    receiptbutton.place(x=1000, y=655)
+
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    exitbutton.place(x=1150, y=655)
 
 
 def menu():
@@ -173,13 +246,13 @@ def menu():
     Label_3.grid(row=0, column=0, padx=101, pady=5)
 
     # Defining the buttons
-    Button_1 = Button(Frame_1, text='VIEW', font=('arial', 16, 'bold'), width=8, command=information )
+    Button_1 = Button(Frame_1, text='VIEW', font=('arial', 16, 'bold'), width=8, command=information)
     Button_1.grid(row=0, column=3, padx=50)
 
-    Button_2 = Button(Frame_2, text='VIEW', font=('arial', 16, 'bold'), width=8,command=feereport )
+    Button_2 = Button(Frame_2, text='VIEW', font=('arial', 16, 'bold'), width=8,command=feereport)
     Button_2.grid(row=0, column=3, padx=50)
 
-    Button_3 = Button(Frame_3, text='VIEW', font=('arial', 16, 'bold'), width=8,command=marksheet )
+    Button_3 = Button(Frame_3, text='VIEW', font=('arial', 16, 'bold'), width=8,command=marksheet)
     Button_3.grid(row=0, column=3, padx=50)
 
 
