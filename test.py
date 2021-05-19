@@ -2,10 +2,10 @@ from tkinter import *
 
 top =Tk()
 
-f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1290, height=190, bg='white', bd=13)
-f_Frame.place(x=0, y=50)
 
-Label = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
-Label.place(x=150, y=0)
+f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1330, height=300, bg='skyblue', bd=13)
+f_Frame.place(x=15, y=20)
 
+Label = Label(f_Frame, text='Student Details', font=('arial', 20, 'bold'), bg='light grey')
+Label.place(x=20, y=0)
 mainloop()

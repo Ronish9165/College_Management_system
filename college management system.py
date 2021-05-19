@@ -13,6 +13,7 @@ def information():
     top.geometry('1350x750')
     top.config(bg='sky blue')
 
+    #create frames
     f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1330, height=500, bg='skyblue', bd=13)
     f_Frame.place(x=15, y=20)
 
@@ -37,6 +38,7 @@ def information():
     label = Label(top, text="STUDENT DATABASE", font=('arial', 17, "bold"), bg="sky blue", padx=10, pady=10)
     label.place(x=600, y=50, )
 
+    #Defining names and labels
     name = Label(top, text="Name",font=('arial',15,'bold'), bg="sky blue")
     name.place(x=50, y=120)
     e1 = Entry(top, font=('arial',15,'bold'))
@@ -108,6 +110,161 @@ def marksheet():
         new.geometry('1350x750')
         new.config(bg='sky blue')
 
+        # Defining name and labels
+        name = Label(new, text="Name", font=('arial', 15, 'bold'), bg="sky blue")
+        name.place(x=50, y=70)
+        e1 = Entry(new, font=('arial', 15, 'bold'))
+        e1.place(x=200, y=70, width=250, height=30)
+
+        father_name = Label(new, text="Father Name", font=('arial', 15, 'bold'), bg="sky blue")
+        father_name.place(x=50, y=110)
+        e2 = Entry(new, font=('arial', 15, 'bold'))
+        e2.place(x=200, y=110, width=250, height=30)
+
+        dob = Label(new, text="Date of Birth", font=('arial', 15, 'bold'), bg="sky blue")
+        dob.place(x=50, y=150)
+        e3 = Entry(new, font=('arial', 15, 'bold'))
+        e3.place(x=200, y=150, width=250, height=30)
+
+        school_name = Label(new, text="School Name", font=('arial', 15, 'bold'), bg="sky blue")
+        school_name.place(x=50, y=190)
+        e4 = Entry(new, font=('arial', 15, 'bold'))
+        e4.place(x=200, y=190, width=250, height=30)
+
+        roll = Label(new, text="Roll Number", font=('arial', 15, 'bold'), bg="sky blue")
+        roll.place(x=700, y=70)
+        e5 = Entry(new, font=('arial', 15, 'bold'))
+        e5.place(x=900, y=70, width=250, height=30)
+
+        mother_name = Label(new, text="Mother Name", font=('arial', 15, 'bold'), bg="sky blue")
+        mother_name.place(x=700, y=110)
+        e6 = Entry(new, font=('arial', 15, 'bold'))
+        e6.place(x=900, y=110, width=250, height=30)
+
+        gender = Label(new, text="Gender", font=('arial', 15, 'bold'), bg="sky blue")
+        gender.place(x=700, y=150)
+        e7 = Entry(new, font=('arial', 15, 'bold'))
+        e7.place(x=900, y=150, width=250, height=30)
+
+        subject = Label(new, text="SUBJECT", font=('arial', 17, 'bold'), bg="sky blue")
+        subject.place(x=100, y=300)
+
+        marksobt = Label(new, text="MARKS OBTAINED", font=('arial', 17, 'bold'), bg="sky blue")
+        marksobt.place(x=300, y=300)
+
+        passmarks = Label(new, text="PASSING MARKS", font=('arial', 17, 'bold'), bg="sky blue")
+        passmarks.place(x=550, y=300)
+
+        total = Label(new, text="TOTAL MARKS", font=('arial', 17, 'bold'), bg="sky blue")
+        total.place(x=800, y=300)
+
+        english = Label(new, text="ENGLISH", font=('arial', 17,), bg="sky blue")
+        english.place(x=90, y=350)
+        eng = Entry(new, font=('arial', 15, 'bold'))
+        eng.place(x=360, y=350, width=70, height=30)
+
+        eng1 = Entry(new, font=('arial', 15, 'bold'))
+        eng1.place(x=600, y=350, width=70, height=30)
+
+        eng2 = Entry(new, font=('arial', 15, 'bold'))
+        eng2.place(x=850, y=350, width=70, height=30)
+
+        physics = Label(new, text="PHYSICS", font=('arial', 17,), bg="sky blue")
+        physics.place(x=90, y=400)
+        phy = Entry(new, font=('arial', 15, 'bold'))
+        phy.place(x=360, y=400, width=70, height=30)
+
+        phy1 = Entry(new, font=('arial', 15, 'bold'))
+        phy1.place(x=600, y=400, width=70, height=30)
+
+        phy2 = Entry(new, font=('arial', 15, 'bold'))
+        phy2.place(x=850, y=400, width=70, height=30)
+
+        chemistry = Label(new, text="CHEMISTRY", font=('arial', 17,), bg="sky blue")
+        chemistry.place(x=90, y=450)
+        che = Entry(new, font=('arial', 15, 'bold'))
+        che.place(x=360, y=450, width=70, height=30)
+
+        che1 = Entry(new, font=('arial', 15, 'bold'))
+        che1.place(x=600, y=450, width=70, height=30)
+
+        che2 = Entry(new, font=('arial', 15, 'bold'))
+        che2.place(x=850, y=450, width=70, height=30)
+
+        math = Label(new, text="MATHEMATICS", font=('arial', 17,), bg="sky blue")
+        math.place(x=70, y=500)
+        mat = Entry(new, font=('arial', 15, 'bold'))
+        mat.place(x=360, y=500, width=70, height=30)
+
+        mat1 = Entry(new, font=('arial', 15, 'bold'))
+        mat1.place(x=600, y=500, width=70, height=30)
+
+        mat2 = Entry(new, font=('arial', 15, 'bold'))
+        mat2.place(x=850, y=500, width=70, height=30)
+
+        computer = Label(new, text="COMPUTER SCIENCE", font=('arial', 16,), bg="sky blue")
+        computer.place(x=80, y=550)
+        com = Entry(new, font=('arial', 15, 'bold'))
+        com.place(x=360, y=550, width=70, height=30)
+
+
+        com1 = Entry(new, font=('arial', 15, 'bold'))
+        com1.place(x=600, y=550, width=70, height=30)
+
+        com2 = Entry(new, font=('arial', 15, 'bold'))
+        com2.place(x=850, y=550, width=70, height=30)
+
+        grandtotal = Label(new, text="GRAND TOTAL", font=('arial', 17,), bg="sky blue")
+        grandtotal.place(x=70, y=600)
+        gran = Entry(new, font=('arial', 15, 'bold'))
+        gran.place(x=360, y=600, width=70, height=30)
+
+        gran1 = Entry(new, font=('arial', 15, 'bold'))
+        gran1.place(x=850, y=600, width=70, height=30)
+
+        percentage = Label(new, text="PERCENTAGE", font=('arial', 19,"bold"), bg="sky blue")
+        percentage.place(x=70, y=650)
+        per = Entry(new, font=('arial', 15, 'bold'))
+        per.place(x=360, y=650, width=70, height=30)
+
+        division = Label(new, text="DIVISION", font=('arial', 19,"bold"), bg="sky blue")
+        division.place(x=100, y=700)
+        div = Entry(new, font=('arial', 15, 'bold'))
+        div.place(x=340, y=700, width=100, height=30)
+
+        gpa = Label(new, text="GPA", font=('arial', 20, "bold"), bg="sky blue")
+        gpa.place(x=600, y=650)
+
+        gpa1 = Entry(new, font=('arial', 15, 'bold'))
+        gpa1.place(x=850, y=650, width=70, height=30)
+
+        result = Label(new, text="RESULT", font=('arial', 20, "bold"), bg="sky blue")
+        result.place(x=600, y=700)
+        res1 = Entry(new, font=('arial', 15, 'bold'))
+        res1.place(x=830, y=700, width=100, height=30)
+
+        grade = Label(new, text="GRADE", font=('arial', 20, "bold"), bg="sky blue")
+        grade.place(x=1050, y=650)
+
+        grade1 = Entry(new, font=('arial', 15, 'bold'))
+        grade1.place(x=1200, y=650, width=70, height=30)
+
+        #Creating buttons
+        combutton = Button(new, text="COMPUTE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        combutton.place(x=1050, y=350)
+
+        savebutton = Button(new, text="SAVE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        savebutton.place(x=1050, y=400)
+
+        updatebutton = Button(new, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        updatebutton.place(x=1050, y=450)
+
+        resetbutton = Button(new, text="RESET", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        resetbutton.place(x=1050, y=500)
+
+        exitbutton = Button(new, text="EXIT", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        exitbutton.place(x=1050, y=550)
+
     f_Framea = LabelFrame(top, font=('arial', 50, 'bold'), width=1000, height=200, bg='skyblue', bd=13)
     f_Framea.place(x=150, y=200)
 
@@ -118,6 +275,7 @@ def marksheet():
     ern.place(x=300, y=250)
     e1 = Entry(top, font=('arial', 15, 'bold')).place(x=700, y=250, width=250, height=45)
 
+    # Buttons
     sbutton= Button(top, text="SEARCH",font=('arial',15,'bold'), width=15, height=1,bg="lightgrey")
     sbutton.place(x=300, y=330)
 
@@ -225,7 +383,7 @@ def menu():
     title_Label = Label(title_Frame, text='MENU', font=('arial', 30, 'bold'), bg='light grey')
     title_Label.grid(row=0, column=0, padx=150)
 
-    #
+    #create a frames
     Frame_1 = LabelFrame(root, font=('arial', 17, 'bold'), width=1000, height=100, bg='light grey')
     Frame_1.grid(row=1, column=0, padx=280)
 
@@ -254,6 +412,7 @@ def menu():
 
     Button_3 = Button(Frame_3, text='VIEW', font=('arial', 16, 'bold'), width=8,command=marksheet)
     Button_3.grid(row=0, column=3, padx=50)
+
 
 
 menu()
