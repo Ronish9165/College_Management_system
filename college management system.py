@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 
 # Defining the title of project
 root = Tk()
@@ -71,9 +72,8 @@ def information():
 
     gender = Label(top, text="Gender",font=('arial',15,'bold'), bg="sky blue")
     gender.place(x=50, y=360)
-    e7 = Entry(top, font=('arial', 15, 'bold'))
+    e7 = ttk.Combobox(top, values=(' ', 'Male', 'Female', 'Others'),font=('arial', 17, 'bold'), textvariable=gender, width=19)
     e7.place(x=200, y=360, width=250, height=30)
-
 
     # Creating a buttons
     savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
@@ -94,7 +94,7 @@ def information():
     searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
     searchbutton.place(x=920, y=590)
 
-    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'),command=top.quit, width=11, height=2, bg="lightgrey")
     exitbutton.place(x=1090, y=590)
 
 
@@ -143,7 +143,7 @@ def marksheet():
 
         gender = Label(new, text="Gender", font=('arial', 15, 'bold'), bg="sky blue")
         gender.place(x=700, y=150)
-        e7 = Entry(new, font=('arial', 15, 'bold'))
+        e7 = ttk.Combobox(new, values=(' ', 'Male', 'Female', 'Others'),font=('arial', 15, 'bold'), textvariable=gender, width=19)
         e7.place(x=900, y=150, width=250, height=30)
 
         subject = Label(new, text="SUBJECT", font=('arial', 17, 'bold'), bg="sky blue")
@@ -344,11 +344,13 @@ def feereport():
 
     branch = Label(top, text="Branch", font=('arial', 14, 'bold'), bg="sky blue")
     branch.place(x=20, y=330)
-    e5 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=330, width=250, height=30)
+    e5 = ttk.Combobox(top, values=(' ', 'Bsc Hons Computing', 'Bsc Hons Ethical Hacking And Cyber Security',),font=('arial', 15, 'bold'), textvariable=branch, width=19)
+    e5.place(x=150, y=330, width=250, height=30)
 
     semester= Label(top, text="Semester", font=('arial', 14, 'bold'), bg="sky blue")
     semester.place(x=20, y=370)
-    e6 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=370, width=250, height=30)
+    e6 = ttk.Combobox(top, values=(' ', 'FIRST', 'SECOND', 'THIRD','FOURTH', 'FIFTH', 'SIXTH', 'SEVENTH', 'EIGHTH'),font=('arial', 15, 'bold'), textvariable=semester, width=19)
+    e6.place(x=150, y=370, width=250, height=30)
 
     # Creating a buttons
     savebutton = Button(top, text="SAVE", font=('arial', 14, 'bold'), width=11, height=1, bg="lightgrey")
