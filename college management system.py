@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
-# Defining the title of project
+# Defining and creating the title of project
 root = Tk()
 root.title("College Management System")
 root.iconbitmap('college.ico')
