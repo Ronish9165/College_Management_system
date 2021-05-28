@@ -275,7 +275,7 @@ def marksheet():
     ern.place(x=300, y=250)
     e1 = Entry(top, font=('arial', 15, 'bold')).place(x=700, y=250, width=250, height=45)
 
-    # Buttons
+    # create Buttons
     sbutton= Button(top, text="SEARCH",font=('arial',15,'bold'), width=15, height=1,bg="lightgrey")
     sbutton.place(x=300, y=330)
 
