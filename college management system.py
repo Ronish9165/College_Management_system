@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import ttk
+import sqlite3
+from tkinter import messagebox
 
 # Defining and creating the title of project
 root = Tk()
@@ -8,11 +10,124 @@ root.iconbitmap('college.ico')
 root.geometry('1350x750')
 root.config(bg='sky blue')
 
+conn = sqlite3.connect('college_management_system.db')
+c = conn.cursor()
+'''
+#Create Table
+c.execute(""" CREATE TABLE college(
+        name text,
+        father_name text,
+        mother_name text,
+        address text,
+        mobile_number text,
+        dob text,
+        gender text
+)""")
+'''
+
+#commit change
+conn.commit()
+
+
+#close connection
+conn.close()
+
+
+
 def information():
     top = Toplevel()
     top.title('Registration')
     top.geometry('1350x750')
     top.config(bg='sky blue')
+
+    def submit():
+        conn = sqlite3.connect("college_management_system.db")
+
+        c = conn.cursor()
+
+        c.execute("INSERT INTO college VALUES(:name, :father_name, :mother_name, :address, :mobile_number, :dob, :gender )",{
+            'name': e1.get(),
+            'father_name': e2.get(),
+            'mother_name': e3.get(),
+            'address': e4.get(),
+            'mobile_number': e5.get(),
+            'dob': e6.get(),
+            'gender': e7.get()
+        })
+        messagebox.showinfo('notice', 'Inserted Succefully',parent=top)
+
+        conn.commit()
+
+        conn.close()
+
+        #clear the text boxes
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e5.delete(0, END)
+        e6.delete(0, END)
+        e7.delete(0, END)
+
+    def show():
+        # Create a databases or connect to one
+        conn = sqlite3.connect('college_management_system.db')
+        # Create cursor
+        c = conn.cursor()
+        # query of the database
+        c.execute("SELECT *, oid FROM college")
+        records = c.fetchall()
+
+        # Loop through the results
+        print_record = ' '
+        for record in records:
+            print_record += str(record[7])+ '  ' +str(record[0]) + '  ' + str(record[1]) + '   ' + str(record[2]) + '  ' + str(record[3]) + ' ' + str(record[4]) + ' ' + str(record[5]) + '  ' + str(record[6]) + "\n"
+            # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
+        query_label = Label(top, text=print_record)
+        query_label.place(x=620, y=110)
+
+    def reset1():
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e5.delete(0, END)
+        e6.delete(0, END)
+        e7.delete(0, END)
+
+        conn.commit()
+        conn.close()
+
+    def delete():
+        # Creating a database or connecting to one
+        conn = sqlite3.connect('college_management_system.db')
+
+        # Create cursor
+        c = conn.cursor()
+
+        # Delete a record
+        c.execute("DELETE from college WHERE oid = " + ed.get())
+
+        # query of the database
+        c.execute("SELECT *, oid FROM college")
+        records = c.fetchall()
+        print(records)
+        # Loop through the results
+        print_record = ''
+        for record in records:
+            print_record += str(record[7])+ '  ' +str(record[0]) + '  ' + str(record[1]) + '   ' + str(record[2]) + '  ' + str(record[3]) + ' ' + str(record[4]) + ' ' + str(record[5]) + '  ' + str(record[6]) + "\n"
+            # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
+        query_label = Label(root, text=print_record)
+        query_label.grid(row=10, column=0, columnspan=2)
+
+        conn.commit()
+        conn.close()
+
+
+    select_name = Label(top, text="SELECT NO", font=('arial', 15, 'bold'), bg="sky blue")
+    select_name.place(x=450, y=520)
+    ed = Entry(top, font=('arial', 15, 'bold'))
+    ed.place(x=580, y=520, width=250, height=30)
 
     #create frames
     f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1330, height=500, bg='skyblue', bd=13)
@@ -76,25 +191,25 @@ def information():
     e7.place(x=200, y=360, width=250, height=30)
 
     # Creating a buttons
-    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), command=submit, width=11, height=2, bg="lightgrey")
     savebutton.place(x=80, y=590)
 
-    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'),command=show, width=11, height=2, bg="lightgrey")
     displaybutton.place(x=250, y=590)
 
-    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'),command=reset1, width=11, height=2, bg="lightgrey")
     resetbutton.place(x=420, y=590)
 
     updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
     updatebutton.place(x=580, y=590)
 
-    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
+    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'),command=delete, width=11, height=2, bg="lightgrey")
     deletebutton.place(x=750, y=590)
 
     searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
     searchbutton.place(x=920, y=590)
 
-    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'),command=top.quit, width=11, height=2, bg="lightgrey")
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'),command=top.destroy, width=11, height=2, bg="lightgrey")
     exitbutton.place(x=1090, y=590)
 
 
@@ -163,10 +278,10 @@ def marksheet():
         eng = Entry(new, font=('arial', 15, 'bold'))
         eng.place(x=360, y=350, width=70, height=30)
 
-        eng1 = Entry(new, font=('arial', 15, 'bold'))
+        eng1 = Entry(new, font=('arial', 15, 'bold'),text='35')
         eng1.place(x=600, y=350, width=70, height=30)
 
-        eng2 = Entry(new, font=('arial', 15, 'bold'))
+        eng2 = Entry(new, text='100', font=('arial', 15, 'bold'))
         eng2.place(x=850, y=350, width=70, height=30)
 
         physics = Label(new, text="PHYSICS", font=('arial', 17,), bg="sky blue")
