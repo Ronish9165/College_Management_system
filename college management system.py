@@ -3,6 +3,7 @@ from tkinter import ttk
 import sqlite3
 from tkinter import messagebox
 
+
 # Defining and creating the title of project
 root = Tk()
 root.title("College Management System")
