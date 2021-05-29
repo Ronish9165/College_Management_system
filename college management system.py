@@ -24,15 +24,30 @@ c.execute(""" CREATE TABLE college(
         gender text
 )""")
 '''
-
-#commit change
-conn.commit()
-
-
-#close connection
-conn.close()
-
-
+'''
+#Create Table
+c.execute(""" CREATE TABLE Fee_Report(
+        receipt text,
+        student_name text,
+        admission_num text,
+        date text,
+        branch text,
+        semester text,
+        total text
+)""")
+'''
+'''
+#Create Table
+c.execute(""" CREATE TABLE marksheet(
+        name text,
+        father_name text,
+        mother_name text,
+        school_name text,
+        dob text,
+        roll text,
+        gender text,
+)""")
+'''
 
 def information():
     top = Toplevel()
@@ -54,7 +69,7 @@ def information():
             'dob': e6.get(),
             'gender': e7.get()
         })
-        messagebox.showinfo('notice', 'Inserted Succefully',parent=top)
+        messagebox.showinfo('Notice', 'Inserted Succefully',parent=top)
 
         conn.commit()
 
@@ -83,7 +98,7 @@ def information():
         for record in records:
             print_record += str(record[7])+ '  ' +str(record[0]) + '  ' + str(record[1]) + '   ' + str(record[2]) + '  ' + str(record[3]) + ' ' + str(record[4]) + ' ' + str(record[5]) + '  ' + str(record[6]) + "\n"
             # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
-        query_label = Label(top, text=print_record)
+        query_label = Label(top, text=print_record, font=('arial', 15 , 'bold'), bg='white')
         query_label.place(x=620, y=110)
 
     def reset1():
@@ -125,9 +140,9 @@ def information():
 
 
     select_name = Label(top, text="SELECT NO", font=('arial', 15, 'bold'), bg="sky blue")
-    select_name.place(x=450, y=520)
+    select_name.place(x=450, y=550)
     ed = Entry(top, font=('arial', 15, 'bold'))
-    ed.place(x=580, y=520, width=250, height=30)
+    ed.place(x=580, y=550, width=250, height=30)
 
     #create frames
     f_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1330, height=500, bg='skyblue', bd=13)
@@ -137,10 +152,10 @@ def information():
     Labelb.place(x=80, y=0)
 
     f_Framec = LabelFrame(top, font=('arial', 50, 'bold'), width=1220, height=115, bg='skyblue', bd=13)
-    f_Framec.place(x=50, y=570)
+    f_Framec.place(x=50, y=600)
 
     Labelc = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
-    Labelc.place(x=50, y=570)
+    Labelc.place(x=50, y=600)
 
     f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=700, height=380, bg='white', )
     f_Framed.place(x=600, y=97)
@@ -192,25 +207,25 @@ def information():
 
     # Creating a buttons
     savebutton = Button(top, text="SAVE", font=('arial', 15, 'bold'), command=submit, width=11, height=2, bg="lightgrey")
-    savebutton.place(x=80, y=590)
+    savebutton.place(x=80, y=625)
 
     displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'),command=show, width=11, height=2, bg="lightgrey")
-    displaybutton.place(x=250, y=590)
+    displaybutton.place(x=250, y=625)
 
     resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'),command=reset1, width=11, height=2, bg="lightgrey")
-    resetbutton.place(x=420, y=590)
+    resetbutton.place(x=420, y=625)
 
     updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
-    updatebutton.place(x=580, y=590)
+    updatebutton.place(x=580, y=625)
 
     deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'),command=delete, width=11, height=2, bg="lightgrey")
-    deletebutton.place(x=750, y=590)
+    deletebutton.place(x=750, y=625)
 
     searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=2, bg="lightgrey")
-    searchbutton.place(x=920, y=590)
+    searchbutton.place(x=920, y=625)
 
     exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'),command=top.destroy, width=11, height=2, bg="lightgrey")
-    exitbutton.place(x=1090, y=590)
+    exitbutton.place(x=1090, y=625)
 
 
 def marksheet():
@@ -224,6 +239,18 @@ def marksheet():
         new.title('Marksheet')
         new.geometry('1350x750')
         new.config(bg='sky blue')
+
+        def save():
+            messagebox.showinfo('Notice', 'Inserted Succesfully',parent=new)
+
+            # clear the text boxes
+            e1.delete(0, END)
+            e2.delete(0, END)
+            e3.delete(0, END)
+            e4.delete(0, END)
+            e5.delete(0, END)
+            e6.delete(0, END)
+            e7.delete(0, END)
 
         # Defining name and labels
         name = Label(new, text="Name", font=('arial', 15, 'bold'), bg="sky blue")
@@ -273,15 +300,15 @@ def marksheet():
         total = Label(new, text="TOTAL MARKS", font=('arial', 17, 'bold'), bg="sky blue")
         total.place(x=800, y=300)
 
-        english = Label(new, text="ENGLISH", font=('arial', 17,), bg="sky blue")
+        english = Label(new, text="ENGLISH", font=('arial', 17,), bg="sky blue", bd=5)
         english.place(x=90, y=350)
         eng = Entry(new, font=('arial', 15, 'bold'))
         eng.place(x=360, y=350, width=70, height=30)
 
-        eng1 = Entry(new, font=('arial', 15, 'bold'),text='35')
+        eng1 = Label(new, text='35' ,font=('arial', 15, 'bold'),bd=5)
         eng1.place(x=600, y=350, width=70, height=30)
 
-        eng2 = Entry(new, text='100', font=('arial', 15, 'bold'))
+        eng2 = Label(new, text='100', font=('arial', 15, 'bold'))
         eng2.place(x=850, y=350, width=70, height=30)
 
         physics = Label(new, text="PHYSICS", font=('arial', 17,), bg="sky blue")
@@ -289,10 +316,10 @@ def marksheet():
         phy = Entry(new, font=('arial', 15, 'bold'))
         phy.place(x=360, y=400, width=70, height=30)
 
-        phy1 = Entry(new, font=('arial', 15, 'bold'))
+        phy1 = Label(new, text='35' ,font=('arial', 15, 'bold'),bd=5)
         phy1.place(x=600, y=400, width=70, height=30)
 
-        phy2 = Entry(new, font=('arial', 15, 'bold'))
+        phy2 = Label(new, text='100' ,font=('arial', 15, 'bold'),bd=5)
         phy2.place(x=850, y=400, width=70, height=30)
 
         chemistry = Label(new, text="CHEMISTRY", font=('arial', 17,), bg="sky blue")
@@ -300,10 +327,10 @@ def marksheet():
         che = Entry(new, font=('arial', 15, 'bold'))
         che.place(x=360, y=450, width=70, height=30)
 
-        che1 = Entry(new, font=('arial', 15, 'bold'))
+        che1 = Label(new, text='35',font=('arial', 15, 'bold'),bd=5)
         che1.place(x=600, y=450, width=70, height=30)
 
-        che2 = Entry(new, font=('arial', 15, 'bold'))
+        che2 = Label(new, text='100', font=('arial', 15, 'bold'),bd=5)
         che2.place(x=850, y=450, width=70, height=30)
 
         math = Label(new, text="MATHEMATICS", font=('arial', 17,), bg="sky blue")
@@ -311,10 +338,10 @@ def marksheet():
         mat = Entry(new, font=('arial', 15, 'bold'))
         mat.place(x=360, y=500, width=70, height=30)
 
-        mat1 = Entry(new, font=('arial', 15, 'bold'))
+        mat1 = Label(new, text='35', font=('arial', 15, 'bold'),bd=5)
         mat1.place(x=600, y=500, width=70, height=30)
 
-        mat2 = Entry(new, font=('arial', 15, 'bold'))
+        mat2 = Label(new, text='100', font=('arial', 15, 'bold'),bd=5)
         mat2.place(x=850, y=500, width=70, height=30)
 
         computer = Label(new, text="COMPUTER SCIENCE", font=('arial', 16,), bg="sky blue")
@@ -323,10 +350,10 @@ def marksheet():
         com.place(x=360, y=550, width=70, height=30)
 
 
-        com1 = Entry(new, font=('arial', 15, 'bold'))
+        com1 = Label(new,  text='35',font=('arial', 15, 'bold'),bd=5)
         com1.place(x=600, y=550, width=70, height=30)
 
-        com2 = Entry(new, font=('arial', 15, 'bold'))
+        com2 = Label(new, text='100', font=('arial', 15, 'bold'),bd=5)
         com2.place(x=850, y=550, width=70, height=30)
 
         grandtotal = Label(new, text="GRAND TOTAL", font=('arial', 17,), bg="sky blue")
@@ -368,7 +395,7 @@ def marksheet():
         combutton = Button(new, text="COMPUTE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
         combutton.place(x=1050, y=350)
 
-        savebutton = Button(new, text="SAVE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        savebutton = Button(new, text="SAVE", font=('arial', 15, 'bold'), command=save,width=11, height=0, bg="lightgrey")
         savebutton.place(x=1050, y=400)
 
         updatebutton = Button(new, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
@@ -377,7 +404,7 @@ def marksheet():
         resetbutton = Button(new, text="RESET", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
         resetbutton.place(x=1050, y=500)
 
-        exitbutton = Button(new, text="EXIT", font=('arial', 15, 'bold'), width=11, height=0, bg="lightgrey")
+        exitbutton = Button(new, text="EXIT", font=('arial', 15, 'bold'),command=new.destroy, width=11, height=0, bg="lightgrey")
         exitbutton.place(x=1050, y=550)
 
     f_Framea = LabelFrame(top, font=('arial', 50, 'bold'), width=1000, height=200, bg='skyblue', bd=13)
@@ -398,12 +425,100 @@ def marksheet():
     createbutton.place(x=700, y=330)
 
 
-
 def feereport():
     top = Toplevel()
     top.title('Fee Report')
     top.geometry('1350x750')
     top.config(bg='sky blue')
+
+    def submit1():
+        conn = sqlite3.connect("college_management_system.db")
+
+        c = conn.cursor()
+
+        c.execute(
+            "INSERT INTO Fee_Report VALUES(:receipt, :student_name, :admission_num, :date, :branch, :semester, :total )", {
+                'receipt': e1.get(),
+                'student_name': e2.get(),
+                'admission_num': e3.get(),
+                'date': e4.get(),
+                'branch': e5.get(),
+                'semester': e6.get(),
+                'total': e7.get()
+            })
+        messagebox.showinfo('Notice', 'Inserted Succefully', parent=top)
+
+        conn.commit()
+
+        conn.close()
+
+        # clear the text boxes
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e5.delete(0, END)
+        e6.delete(0, END)
+        e7.delete(0, END)
+
+    def show1():
+        # Create a databases or connect to one
+        conn = sqlite3.connect('college_management_system.db')
+        # Create cursor
+        c = conn.cursor()
+        # query of the database
+        c.execute("SELECT *, oid FROM Fee_Report")
+        records = c.fetchall()
+
+        # Loop through the results
+        print_record = ' '
+        for record in records:
+            print_record += str(record[7]) + '  ' + str(record[0]) + '  ' + str(record[1]) + '   ' + str(
+                record[2]) + '  ' + str(record[3]) + ' ' + str(record[4]) + ' ' + str(record[5]) + '  ' + str(
+                record[6]) + "\n"
+            # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
+        query_label = Label(top, text=print_record, font=('arial', 15, 'bold'), bg='white')
+        query_label.place(x=50, y=480)
+
+    def reseta():
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+        e4.delete(0, END)
+        e5.delete(0, END)
+        e6.delete(0, END)
+        e7.delete(0, END)
+
+        conn.commit()
+        conn.close()
+
+    def delete1():
+        # Creating a database or connecting to one
+        conn = sqlite3.connect('college_management_system.db')
+
+        # Create cursor
+        c = conn.cursor()
+
+        # Delete a record
+        c.execute("DELETE from Fee_Report WHERE oid = " + edel.get())
+
+        # query of the database
+        c.execute("SELECT *, oid FROM Fee_Report")
+        records = c.fetchall()
+        print(records)
+        # Loop through the results
+        print_record = ''
+        for record in records:
+            print_record += str(record[7]) + '  ' + str(record[0]) + '  ' + str(record[1]) + '   ' + str(
+                record[2]) + '  ' + str(record[3]) + ' ' + str(record[4]) + ' ' + str(record[5]) + '  ' + str(
+                record[6]) + "\n"
+            # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
+        query_label = Label(root, text=print_record)
+        query_label.grid(row=10, column=0, columnspan=2)
+
+        conn.commit()
+        conn.close()
+
 
     t_Frame = LabelFrame(top, font=('arial', 50, 'bold'), width=1000, height=90, bg='light grey', bd=13)
     t_Frame.place(x=150, y=0)
@@ -426,36 +541,55 @@ def feereport():
     f_Framec = LabelFrame(top, font=('arial', 50, 'bold'), width=1300, height=170, bg='white', bd=13)
     f_Framec.place(x=25, y=455)
 
-    Labelc = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
+    Labelc = Label(f_Frame, font=('arial', 30, 'bold'), bg='light grey')
     Labelc.place(x=25, y=455)
-
-    f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=480, height=255, bg='white', )
-    f_Framed.place(x=790, y=165)
-
-    Labeld = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
-    Labeld.place(x=790, y=165)
 
     label = Label(top, text="Informations", font=('arial', 15, "bold"), bg="sky blue", padx=10, pady=10)
     label.place(x=20, y=120)
 
-    label = Label(top, text="Fee Receipt", font=('arial', 15, "bold"), bg="sky blue", padx=10, pady=10)
-    label.place(x=790, y=120)
+    f_Framee = LabelFrame(top, font=('arial', 50, 'bold'), width=520, height=315, bd=13)
+    f_Framee.place(x=760, y=120)
 
+    Labele = Label(top, text='Fee Receipt', font=('arial', 20, 'bold'), bg='light grey')
+    Labele.place(x=780, y=140)
+
+    # f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=480, height=255, bg='white', )
+    # f_Framed.place(x=780, y=160)
+    #
+    # Labeld = Label(f_Frame, font=('arial', 30, 'bold'), bg='light grey')
+    # Labeld.place(x=780, y=160)
+
+    def receipt1():
+
+        receipt_text = Label(top, text="Total Amount=50000",font=('arial', 15, 'bold') )
+        receipt_text.place(x=780, y=200)
+
+        receipt_text1 = Label(top, text="Paid Amount=50000",font=('arial', 15, 'bold'))
+        receipt_text1.place(x=780, y=250)
+
+        receipt_text2 = Label(top, text="Balance=0",font=('arial', 15, 'bold'))
+        receipt_text2.place(x=780, y=300)
+
+    # Defining name and entry boxes
     receipt = Label(top, text="Receipt No", font=('arial', 14, 'bold'), bg="sky blue")
     receipt.place(x=30, y=170)
-    e1 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=170, width=250, height=30)
+    e1 = Entry(top, font=('arial', 15, 'bold'), )
+    e1.place(x=150, y=170, width=250, height=30)
 
     student_name = Label(top, text="Student Name", font=('arial', 14, 'bold'), bg="sky blue")
     student_name.place(x=20, y=210)
-    e2 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=210, width=250, height=30)
+    e2 = Entry(top, font=('arial', 15, 'bold'), )
+    e2.place(x=150, y=210, width=250, height=30)
 
     admission = Label(top, text="Admission No", font=('arial', 14, 'bold'), bg="sky blue")
     admission.place(x=20, y=250)
-    e3 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=250, width=250, height=30)
+    e3 = Entry(top, font=('arial', 15, 'bold'), )
+    e3.place(x=150, y=250, width=250, height=30)
 
     date = Label(top, text="Date", font=('arial', 14, 'bold'), bg="sky blue")
     date.place(x=20, y=290)
-    e4 = Entry(top, font=('arial', 15, 'bold'), ).place(x=150, y=290, width=250, height=30)
+    e4 = Entry(top, font=('arial', 15, 'bold'), )
+    e4.place(x=150, y=290, width=250, height=30)
 
     branch = Label(top, text="Branch", font=('arial', 14, 'bold'), bg="sky blue")
     branch.place(x=20, y=330)
@@ -467,29 +601,49 @@ def feereport():
     e6 = ttk.Combobox(top, values=(' ', 'FIRST', 'SECOND', 'THIRD','FOURTH', 'FIFTH', 'SIXTH', 'SEVENTH', 'EIGHTH'),font=('arial', 15, 'bold'), textvariable=semester, width=19)
     e6.place(x=150, y=370, width=250, height=30)
 
+    total = Label(top, text= "TOTAL AMOUNT", font=('arial', 14, 'bold'), bg="sky blue")
+    total.place(x=420, y=250)
+    e7 = Label(top, font=('arial', 15, 'bold') ,text='50000',bd=5)
+    e7.place(x=580, y=250, width=150, height=30)
+
+    paid = Label(top, text="PAID AMOUNT", font=('arial', 14, 'bold'), bg="sky blue")
+    paid.place(x=430, y=290)
+    e7 = Entry(top, font=('arial', 15, 'bold'))
+    e7.place(x=580, y=290, width=150, height=30)
+
+    balance = Label(top, text="BALANCE", font=('arial', 14, 'bold'), bg="sky blue")
+    balance.place(x=430, y=330)
+    e7 = Entry(top, font=('arial', 15, 'bold'))
+    e7.place(x=580, y=330, width=150, height=30)
+
+    select_name = Label(top, text="SELECT NO", font=('arial', 15, 'bold'), bg="sky blue")
+    select_name.place(x=430, y=370)
+    edel = Entry(top, font=('arial', 15, 'bold'))
+    edel.place(x=580, y=370, width=150, height=30)
+
     # Creating a buttons
-    savebutton = Button(top, text="SAVE", font=('arial', 14, 'bold'), width=11, height=1, bg="lightgrey")
+    savebutton = Button(top, text="SAVE", font=('arial', 14, 'bold'), command=submit1, width=11, height=1, bg="lightgrey")
     savebutton.place(x=50, y=655)
 
-    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    displaybutton = Button(top, text="DISPLAY", font=('arial', 15, 'bold'), command=show1,width=11, height=1, bg="lightgrey")
     displaybutton.place(x=210, y=655)
 
-    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    resetbutton = Button(top, text="RESET", font=('arial', 15, 'bold'),command=reseta, width=11, height=1, bg="lightgrey")
     resetbutton.place(x=360, y=655)
 
     updatebutton = Button(top, text="UPDATE", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
     updatebutton.place(x=520, y=655)
 
-    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    deletebutton = Button(top, text="DELETE", font=('arial', 15, 'bold'),command=delete1, width=11, height=1, bg="lightgrey")
     deletebutton.place(x=680, y=655)
 
     searchbutton = Button(top, text="SEARCH", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
     searchbutton.place(x=840, y=655)
 
-    receiptbutton = Button(top, text="RECEIPT NO", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    receiptbutton = Button(top, text="RECEIPT NO", font=('arial', 15, 'bold'), command=receipt1, width=11, height=1, bg="lightgrey")
     receiptbutton.place(x=1000, y=655)
 
-    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), width=11, height=1, bg="lightgrey")
+    exitbutton = Button(top, text="EXT", font=('arial', 15, 'bold'), command=top.destroy, width=11, height=1, bg="lightgrey")
     exitbutton.place(x=1150, y=655)
 
 
@@ -531,6 +685,11 @@ def menu():
     Button_3.grid(row=0, column=3, padx=50)
 
 
+#commit change
+conn.commit()
+
+#close connection
+conn.close()
 
 menu()
 
