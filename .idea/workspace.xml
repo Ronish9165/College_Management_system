@@ -209,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622308820726</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="College Management System">
+      <created>1622354030048</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1622354030048</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,8 +235,8 @@
     <MESSAGE value="Second Change" />
     <MESSAGE value="College management system" />
     <MESSAGE value="clg mgmt system" />
-    <MESSAGE value="College Management System" />
     <MESSAGE value="college management system" />
-    <option name="LAST_COMMIT_MESSAGE" value="college management system" />
+    <MESSAGE value="College Management System" />
+    <option name="LAST_COMMIT_MESSAGE" value="College Management System" />
   </component>
 </project>

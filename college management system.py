@@ -111,7 +111,7 @@ def mainpage():
                     record[6]) + "\n"
                 # print_record += str(record[0]) + ' ' + str(record[1]) + "\n"
             query_label = Label(top, text=print_record, font=('arial', 15, 'bold'), bg='white')
-            query_label.place(x=620, y=110)
+            query_label.place(x=630, y=110)
 
         def reset1():
             e1.delete(0, END)
@@ -167,17 +167,18 @@ def mainpage():
         Labelc = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
         Labelc.place(x=50, y=600)
 
-        f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=700, height=380, bg='white', )
-        f_Framed.place(x=600, y=97)
 
-        Labeld = Label(f_Frame, text='', font=('arial', 30, 'bold'), bg='light grey')
-        Labeld.place(x=600, y=97)
+        f_Frame = LabelFrame(top, text="INFORMATION", font=('arial', 15, 'bold'), width=500, height=450,
+                             bg='skyblue', bd=13)
+        f_Frame.place(x=30, y=40)
 
-        label = Label(top, text="STUDENT INFORMATION", font=('arial', 17, "bold"), bg="gainsboro", padx=10, pady=10)
-        label.place(x=30, y=50, )
+        f_Frame1 = LabelFrame(top, text="STUDENT DATABASE", font=('arial', 15, 'bold'), width=700, height=450,
+                             bg='skyblue', bd=13)
+        f_Frame1.place(x=600, y=45)
 
-        label = Label(top, text="STUDENT DATABASE", font=('arial', 17, "bold"), bg="gainsboro", padx=10, pady=10)
-        label.place(x=600, y=50, )
+        f_Framed = LabelFrame(top, font=('arial', 50, 'bold'), width=650, height=380, bg='white', )
+        f_Framed.place(x=620, y=95)
+
 
         # Defining names and labels
         name = Label(top, text="Name", font=('arial', 15, 'bold'), bg="sky blue")
