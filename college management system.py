@@ -747,9 +747,6 @@ title_Frame.place(x=0, y=0 )
 title_Label = Label(title_Frame, text='USER LOGIN', font=('arial', 30, 'bold'), bg='sky blue')
 title_Label.place(x=180, y=0)
 
-# login_title=Label(root1, text="USER LOGIN", font=('arial',30,'bold'))
-# login_title.place(x=200, y=30)
-
 username=Label(root1, text="USERNAME:",font=('arial',17,'bold'), bg='gainsboro')
 username.place(x=180, y=150)
 
@@ -763,7 +760,7 @@ username_entry.place(x=350, y=150, width=150, height=30)
 password_entry=Entry(root1, text="",show='●',font=('arial',15,'bold'))
 password_entry.place(x=350, y=230, width=150, height=30)
 
-#BUtton
+#Button
 login_btn = Button(root1, text="Login", font=("arial", 15, "bold"), width=20, bg="white", command=login)
 login_btn.place(x=250, y=300)
 

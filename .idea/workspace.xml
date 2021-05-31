@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c835f992-41dd-445e-844b-f3a8119dddd8" name="Default Changelist" comment="College Management System">
+      <change afterPath="$PROJECT_DIR$/Testing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/college_management_system.db" beforeDir="false" afterPath="$PROJECT_DIR$/college_management_system.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DatabaseProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tkinter" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -221,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622367666396</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="College Management System">
+      <created>1622390143010</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1622390143010</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,8 +249,8 @@
     <MESSAGE value="Second Change" />
     <MESSAGE value="College management system" />
     <MESSAGE value="clg mgmt system" />
-    <MESSAGE value="College Management System" />
     <MESSAGE value="college management system" />
-    <option name="LAST_COMMIT_MESSAGE" value="college management system" />
+    <MESSAGE value="College Management System" />
+    <option name="LAST_COMMIT_MESSAGE" value="College Management System" />
   </component>
 </project>
