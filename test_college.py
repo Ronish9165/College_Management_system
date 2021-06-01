@@ -1,4 +1,4 @@
-from college import *
+from rough import *
 def test_login():
     db = show_login_result('ankit','9841252055')
     assert db == 'Pass'
