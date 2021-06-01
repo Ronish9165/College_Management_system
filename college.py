@@ -48,7 +48,7 @@ c.execute(""" CREATE TABLE marksheet(
 '''
 
 def show_login_result(user_name,password):
-    conn = sqlite3.connect("registration.db")
+    conn = sqlite3.connect("college_management_system.db")
     c = conn.cursor()
     c.execute("SELECT * FROM college WHERE name = ? and mobile_number = ?",(user_name,password))
     check = c.fetchall()
