@@ -3,6 +3,7 @@ from tkinter import ttk
 import sqlite3
 from tkinter import messagebox
 
+# create login page
 root1= Tk()
 root1.title('LOGIN')
 root1.geometry('700x400')
@@ -384,7 +385,7 @@ def mainpage():
             gran = Entry(new, font=('arial', 15, 'bold'))
             gran.place(x=360, y=600, width=70, height=30)
 
-            gran1 = Entry(new, font=('arial', 15, 'bold'))
+            gran1 = Label(new, text="500" ,font=('arial', 15, 'bold'))
             gran1.place(x=850, y=600, width=70, height=30)
 
             percentage = Label(new, text="PERCENTAGE", font=('arial', 19, "bold"), bg="sky blue")
@@ -681,13 +682,14 @@ def mainpage():
         exitbutton.place(x=1150, y=655)
 
     def menu():
+
+        # Defining frames and label
         title_Frame = LabelFrame(root, font=('arial', 50, 'bold'), width=1000, height=100, bg='light grey', bd=13)
         title_Frame.grid(row=0, column=0, pady=50)
 
         title_Label = Label(title_Frame, text='MENU', font=('arial', 30, 'bold'), bg='light grey')
         title_Label.grid(row=0, column=0, padx=150)
 
-        # create a frames
         Frame_1 = LabelFrame(root, font=('arial', 17, 'bold'), width=1000, height=100, bg='skyblue')
         Frame_1.grid(row=1, column=0, padx=280)
 
@@ -739,7 +741,7 @@ def login():
     else:
         messagebox.showerror("Error", "Your username or password is incorrect")
 
-#Defining label
+#Defining label and frame
 
 title_Frame = LabelFrame(root1, font=('arial', 50, 'bold'), width=700, height=100, bg='sky blue', bd=13)
 title_Frame.place(x=0, y=0 )
