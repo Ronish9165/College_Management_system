@@ -731,7 +731,7 @@ def login():
     if username_entry.get() == "" or password_entry.get() == "":
         messagebox.showerror("Error", "All fields must be required")
     elif username_entry.get() == "admin" and password_entry.get() == "admin":
-        messagebox.showerror("Login","Login successfull")
+        messagebox.showinfo("Login","Login successfull")
         root1.withdraw()
         mainpage()
 
